@@ -9,6 +9,14 @@
       <button class="add" @click="addSubject">+</button>
       <p :class="{ error: characters > 255}"><strong>Total Character Count:</strong> {{characters}} / 255</p>
       <p><i>Includes special formatting characters not shown.</i></p>
+      <hr>
+      <p><strong>Common Veeva Tokens for use in subjects:</strong></p>
+      <ul>
+        <li><i>##accTitle##</i> - Inserts Account salutation</li>
+        <li><i>##accFname##</i> - Inserts Account first name</li>
+        <li><i>##accLname##</i> - Inserts Account last name</li>
+        <li><i>##userName##</i> - Inserts the rep’s name</li>
+      </ul>
     </div>
   </div>
 </template>
