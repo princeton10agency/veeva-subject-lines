@@ -106,6 +106,10 @@ textarea {
   resize: none;
 }
 
+.subjects {
+  padding: 20px 0;
+}
+
 .row {
   display: flex;
   flex-direction: row;
