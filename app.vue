@@ -8,6 +8,7 @@
     </Html>
 
     <h1>Veeva Subject Line Calculator</h1>
+    <Fork />
     <div class="subjects">
       <div class="row" v-bind:key= "subject.id" v-for="subject in subjects">
         <input v-model="subject.msg">
