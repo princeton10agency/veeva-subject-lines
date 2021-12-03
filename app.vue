@@ -4,6 +4,7 @@
     <div class="subjects">
       <div class="row" v-bind:key= "subject.id" v-for="subject in subjects">
         <input v-model="subject.msg">
+        <span class="chars">{{subject.msg.length}}</span>
         <button class="remove" @click="removeSubject(subject.id)">-</button>
       </div>
       <button class="add" @click="addSubject">+</button>
@@ -37,10 +38,7 @@ export default {
   },
   computed: {
     characters () {
-      let charCount = this.subjects.reduce(function(charCount, item) {
-        return charCount + item.msg.length;
-      }, 0)
-      return this.charsBase + this.subjects.length - 1 + charCount
+      return this.token.length
     },
     token () {
       let s = this.subjects.map(function(subject) {
@@ -80,6 +78,11 @@ body {
   font-family: arial, sans-serif;
 }
 
+h1 {
+  font-size: 24px;
+  line-height: 26px;
+}
+
 input {
   font-size: 18px;
   line-height: 20px;
@@ -91,7 +94,7 @@ textarea {
   font-size: 18px;
   line-height: 20px;
   font-family: arial, sans-serif;
-  width: calc(100% - 50px);
+  width: calc(100%);
   height: 100px;
   resize: none;
 }
@@ -104,8 +107,14 @@ textarea {
   padding-bottom: 15px;
 }
 
+.chars {
+  width: 45px;
+  text-align: center;
+  color: #666;
+}
 .remove {
-  width: 29px;
+  width: 35px;
+  text-align: center;
 }
 
 .add {
