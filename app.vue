@@ -16,7 +16,6 @@
       </div>
       <button class="add" @click="addSubject">+</button>
       <p :class="{ error: characters > 255}"><strong>Total Character Count:</strong> {{characters}} / 255</p>
-      <p><i>Includes special formatting characters not shown.</i></p>
       <textarea disabled v-model="token" />
       <hr>
       <p><strong>Common Veeva Tokens for use in subjects:</strong></p>
@@ -101,7 +100,7 @@ textarea {
   font-size: 18px;
   line-height: 20px;
   font-family: arial, sans-serif;
-  width: calc(100%);
+  width: 100%;
   height: 100px;
   resize: none;
 }
