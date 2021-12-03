@@ -9,6 +9,7 @@
       <button class="add" @click="addSubject">+</button>
       <p :class="{ error: characters > 255}"><strong>Total Character Count:</strong> {{characters}} / 255</p>
       <p><i>Includes special formatting characters not shown.</i></p>
+      <textarea disabled v-model="token" />
       <hr>
       <p><strong>Common Veeva Tokens for use in subjects:</strong></p>
       <ul>
@@ -40,6 +41,14 @@ export default {
         return charCount + item.msg.length;
       }, 0)
       return this.charsBase + this.subjects.length - 1 + charCount
+    },
+    token () {
+      let s = this.subjects.map(function(subject) {
+        return subject['msg']
+      })
+      let token = s.join('|')
+      token = '{{customText[' + token + ']}}'
+      return token
     }
   },
   methods: {
@@ -76,6 +85,15 @@ input {
   line-height: 20px;
   font-family: arial, sans-serif;
   width: calc(100% - 50px);
+}
+
+textarea {
+  font-size: 18px;
+  line-height: 20px;
+  font-family: arial, sans-serif;
+  width: calc(100% - 50px);
+  height: 100px;
+  resize: none;
 }
 
 .row {
