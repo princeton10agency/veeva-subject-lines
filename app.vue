@@ -1,5 +1,12 @@
 <template>
   <div>
+    <Html>
+      <Head>
+        <Title>Veeva Subject Line Calculator</Title>
+        <Meta name="description" content="Test subject line options for their proper length." />
+      </Head>
+    </Html>
+
     <h1>Veeva Subject Line Calculator</h1>
     <div class="subjects">
       <div class="row" v-bind:key= "subject.id" v-for="subject in subjects">
