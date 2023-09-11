@@ -16,7 +16,7 @@
         <button class="remove" @click="removeSubject(subject.id)">-</button>
       </div>
       <button class="add" @click="addSubject">+</button>
-      <p :class="{ error: characters > 255}"><strong>Total Character Count:</strong> {{characters}} / 255</p>
+      <p :class="{ error: characters > 1500}"><strong>Total Character Count:</strong> {{characters}} / 1500</p>
       <textarea disabled v-model="token" />
       <hr>
       <p><strong>Common Veeva Tokens for use in subjects:</strong></p>
